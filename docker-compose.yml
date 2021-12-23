@@ -1,0 +1,36 @@
+version: '3.5'
+
+services:
+    tomcat:
+        image: brahimafa/tomcat-manager
+        container_name: tomcat
+        hostname: tomcat
+        depends_on:
+            - mysql
+        ports:
+            - 8080:8080
+        volumes:
+            - ./wars:/app
+    mysql:
+        image: mysql
+        hostname: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - vol_mysql_data:/var/lib/mysql
+    adminer:
+        image: adminer
+        hostname: adminer
+        environment:
+            ADMINER_DEFAULT_SERVER: mysql
+        ports:
+            - "6767:8080"
+        depends_on:
+            - mysql
+volumes:
+    vol_mysql_data:
+        name: vol_mysql_data
+    vol_mysql_data:
+        name: vol_mysql_data
