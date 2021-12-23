@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - MGTP</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="/assets/css/Conv_conthrax-sb.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#" style="font-family: Conv_conthrax-sb;">MGTP</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+        </div>
+    </nav>
+    <header class="text-center text-white masthead" style="background:url('/assets/img/bg-masthead.jpg')no-repeat center center;background-size:cover;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto position-relative">
+                    <h1 class="mb-5" style="font-family: Conv_conthrax-sb;">Dobro došli na MGTP Web platformu.</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <form method="post" action="" id="frmLogin">
+    <div style="text-align: center;">
+        <div class="row" style="width: 100%;text-align: center;">
+            <div class="col-xxl-3 offset-0 offset-xl-0 offset-xxl-0" style="text-align: center;width: 100%;"><label class="col-form-label" style="font-family: Conv_conthrax-sb;">Username</label></div>
+        </div>
+        <div class="row" style="width: 100%;">
+            <div class="col offset-0 offset-xl-0 offset-xxl-0" style="text-align: center;"><input type="text" style="text-align: left;font-family: Conv_conthrax-sb;width: 179px;" id="usernameField" name="usernameField">
+            </div>
+
+            <div class="col-xxl-1 offset-xxl-0" style="width: 100%;margin-top: 10px;"><label class="col-form-label" style="font-family: Conv_conthrax-sb;">Password</label>
+            </div>
+        </div>
+        <div class="row" style="width: 100%;">
+            <div class="col-xxl-6 offset-0 offset-xl-0 offset-xxl-0" style="width: 100%;text-align: center;"><input type="password" style="font-family: Conv_conthrax-sb;width: 179px;" id="password" name="password"></div>
+        </div>
+        <div class="row" style="width: 100%;">
+            <div class="col offset-xl-0" style="text-align: center;"><button class="btn btn-primary" type="button" style="margin-top: 15px;font-family: Conv_conthrax-sb;" id="loginButton">Log in</button></div>
+        </div>
+    </div>
+    </form>
+    <script src="../static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+</body>
+
+</html>
