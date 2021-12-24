@@ -56,7 +56,7 @@ public class AdminPrintController {
     @Autowired
     PomicnoMerilo01200Service pomicnoMerilo01200Service;
 
-    @RequestMapping("/admin/print")
+    @RequestMapping("/admin/printAdmin")
     public String getPrint(Model model){
         List<UserDTO> etalonirali = userService.getAllUsers();
         List<UserDTO> odobrili = userService.getByROLES("ADMIN");
