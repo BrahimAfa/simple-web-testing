@@ -16,7 +16,7 @@
     <description>MGT_AMSS</description>
     <properties>
         <java.version>11</java.version>
-    </properties>o
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.itextpdf</groupId>
