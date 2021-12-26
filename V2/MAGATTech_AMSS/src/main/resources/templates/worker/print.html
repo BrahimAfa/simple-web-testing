@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - MGTP</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="/assets/css/Conv_conthrax-sb.css">
+    <link rel="stylesheet" href="/assets/css/untitled.css">
+</head>
+
+<body>
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <div class="container"><a class="navbar-brand">MGTP</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+        <div class="collapse navbar-collapse" id="navcol-1"></div>
+        <button class="btn btn-primary" type="button" id="btnEtaloniranje" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Etaloniranje</button>
+        <button class="btn btn-primary" type="button" id="btnPromeniSet" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Promeni set</button>
+        <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnStampaj">Štampanje</button>
+        <button class="btn btn-primary" type="button" id="btnPregled" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Pregled</button>
+        <button class="btn btn-primary" type="button" id="btnOdjaviSe" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Odjavi se</button>
+    </div>
+    </div>
+</nav>
+<form method="post" action="" id="pstForm">
+    <div class="row" style="text-align: center;margin-top: 20px;">
+        <div class="col" style="text-align: right;"><label class="col-form-label">Broj seta:</label></div>
+        <div class="col align-self-center" style="text-align: left;"><input type="text" id="brojSeta" name="brojSeta"></div>
+    </div>
+    <div class="row text-center" style="text-align: center;margin-top: 10px;">
+        <div class="col align-self-end" style="text-align: right;"><label class="col-form-label">Sertifikat za štampanje:</label></div>
+        <div class="col align-self-center" style="text-align: left;"><select id="predmetEtaloniranja" name="predmetEtaloniranja">
+            <optgroup label="">
+                <option value="Pomično merilo" selected="">Pomično merilo</option>
+                <option value="Merna traka 3m">Merna traka 3m</option>
+                <option value="Merna traka 5m">Merna traka 5m</option>
+                <option value="Merna traka 30m">Merna traka 30m</option>
+                <option value="Merna traka 50m">Merna traka 50m</option>
+                <option value="Kontrolnik vučne kuke 1">Kontrolnik vučne kuke 1</option>
+                <option value="Kontrolnik vučne kuke 2">Kontrolnik vučne kuke 2</option>
+            </optgroup>
+        </select></div>
+        <div class="row text-center" style="text-align: center;margin-top: 10px;">
+            <div class="col align-self-end" style="text-align: right;"><label class="col-form-label">Etalonirao:</label></div>
+            <div class="col align-self-center" style="text-align: left;"><select id="etalonirao" name="etalonirao">
+                <optgroup label="">
+                    <option value="Miloš Bjelić ,Rukovodilac laboratorije/ Head of the laboratory" selected="">Miloš Bjelić ,Rukovodilac laboratorije/ Head of the laboratory</option>
+                    <option value="Tamara Antonijević ,Zamenik rukovodioca laboratorije/ Deputy Head of the laboratory" selected="">Tamara Antonijević ,Zamenik rukovodioca laboratorije/ Deputy Head of the laboratory</option>
+                    <option value="Nikola Danilović ,Metrolog" selected="">Nikola Danilović ,Metrolog</option>
+                    <option value="Mileta Dabetić ,Metrolog" selected="">Mileta Dabetić ,Metrolog</option>
+
+                </optgroup>
+            </select></div>
+        </div>
+        <div class="row text-center" style="text-align: center;margin-top: 10px;">
+            <div class="col align-self-end" style="text-align: right;"><label class="col-form-label">Odobrio:</label></div>
+            <div class="col align-self-center" style="text-align: left;"><select id="odobrio" name="odobrio">
+                <optgroup label="">
+                    <option value="Miloš Bjelić ,Rukovodilac laboratorije/ Head of the laboratory" selected="">Miloš Bjelić ,Rukovodilac laboratorije/ Head of the laboratory</option>
+                    <option value="Tamara Antonijević ,Zamenik rukovodioca laboratorije/ Deputy Head of the laboratory" selected="">Tamara Antonijević ,Zamenik rukovodioca laboratorije/ Deputy Head of the laboratory</option>
+                </optgroup>
+            </select></div>
+        </div>
+    </div>
+</form>
+    <div class="row" style="margin-top: 20px;text-align: center;">
+        <div class="col"><button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: var(--bs-gray-100);" id="printBtn" name="printBtn">Štampaj</button></div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/print.js"></script>
+</body>
+
+</html>

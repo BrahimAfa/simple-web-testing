@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MGTP</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="/assets/css/Conv_conthrax-sb.css">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/untitled.css">
+</head>
+
+<body>
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <div class="container"><a class="navbar-brand" href="#">MGTP</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+        <div class="collapse navbar-collapse" id="navcol-1"></div>
+        <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnPregled">Pregled</button>
+        <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnNoviSet">Novi set</button>
+        <button class="btn btn-primary" type="button" style="border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;background: var(--bs-gray);" id="btnOdjaviSe">Odjavi se</button></div>
+    </div>
+</nav>
+<form method="post" action="" id="pstForm">
+    <div class="row">
+        <div class="col" style="text-align: right;"><label class="col-form-label" style="font-size: 10px;">Pretraga</label></div>
+        <div class="col"><input type="text" id="pretraga" name="pretraga"></div>
+        <div class="col d-flex"><button class="btn btn-primary" type="button" style="color: var(--bs-white);background: var(--bs-gray);border-color: var(--bs-white);transform: scale(0.68);" id="btnPretraga">Pretraga</button></div>
+    </div>
+</form>
+    <div class="table-responsive" style="padding-top: 10px;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="font-size: 10px;padding: 0;padding-left: 2px;">Datum etaloniranja</th>
+                    <th style="font-size: 10px;padding: 0;padding-left: 14px;">Naziv</th>
+                    <th style="font-size: 10px;padding: 0;">Adresa</th>
+                    <th style="font-size: 10px;padding: 0;width: 30px;">PIB</th>
+                    <th style="font-size: 10px;padding: 0;">Br. telefona</th>
+                    <th style="font-size: 10px;padding: 0;width: 40px;">Br. seta</th>
+                    <th style="font-size: 10px;padding: 0;">Fakturisano</th>
+                    <th style="font-size: 10px;padding: 0;padding-left: 10px;">Korsinik</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="record:${records}">
+                    <td style="padding: 0;padding-left: 2px;font-size: 10px;" th:text="${record.datumAMSS}"></td>
+                    <td style="padding: 0;padding-left: 14px;font-size: 10px;" th:text="${record.naziv}"></td>
+                    <td style="padding: 0;font-size: 10px;" th:text="${record.adresa}"></td>
+                    <td style="padding: 0;font-size: 10px;" th:text="${record.PIB}"></td>
+                    <td style="padding: 0;font-size: 10px;" th:text="${record.telefon}"></td>
+                    <td style="padding: 0;font-size: 10px;" th:text="${record.brojSeta}"></td>
+                    <td style="padding: 0;font-size: 10px;" th:text="${record.fakturisano}"></td>
+                    <td style="padding: 0;padding-left: 10px;font-size: 10px;" th:text="${record.korisnik}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bs-init.js"></script>
+    <script type="text/javascript" src="/assets/js/pregledUser.js"></script>
+</body>
+
+</html>

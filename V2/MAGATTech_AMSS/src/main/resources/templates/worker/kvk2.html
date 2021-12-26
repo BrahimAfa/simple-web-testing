@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - MGTP</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="/assets/css/Conv_conthrax-sb.css">
+    <link rel="stylesheet" href="/assets/css/untitled.css">
+</head>
+
+<body>
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <div class="container"><a class="navbar-brand">MGTP</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+        <div class="collapse navbar-collapse" id="navcol-1"></div>
+        <button class="btn btn-primary" type="button" id="btnEtaloniranje" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Etaloniranje</button>
+        <button class="btn btn-primary" type="button" id="btnPromeniSet" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Promeni set</button>
+        <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnStampaj">Štampanje</button>
+        <button class="btn btn-primary" type="button" id="btnPregled" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Pregled</button>
+        <button class="btn btn-primary" type="button" id="btnOdjaviSe" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Odjavi se</button>
+    </div>
+    </div>
+</nav>
+<form id="frmInfo" method="post" action="" name="frmInfo">
+    <input type="hidden" th:value="${rec}" th:attr="name='rec'" id="rec"/>
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive d-inline">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">Kontrolna mera</th>
+                            <th style="text-align: center;">Izmerena vrednost [mm]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr style="text-align: center;">
+                        <td style="text-align: center;"><label class="form-label" style="margin-top: 25px;">A</label></td>
+                        <td style="width: 700px;text-align: left;">
+                            <div class="row">
+                                <div class="col"><label class="col-form-label">Presek I</label></div>
+                                <div class="col" style="text-align: left;width: 200px;"><input type="text" id="i0" name="i0" th:value="${kontrolnikVucneKuke2DTO.aP1}"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><label class="col-form-label">Presek II</label></div>
+                                <div class="col" style="width: 150px;text-align: left;"><input type="text" id="i1" name="i1" th:value="${kontrolnikVucneKuke2DTO.aP2}"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td style="text-align: center;"><label class="form-label" style="margin-top: 25px;">B</label></td>
+                        <td style="width: 700px;text-align: left;">
+                            <div class="row">
+                                <div class="col"><label class="col-form-label">Presek I</label></div>
+                                <div class="col" style="text-align: left;width: 200px;"><input type="text" id="i2" name="i2" th:value="${kontrolnikVucneKuke2DTO.bP1}"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><label class="col-form-label">Presek II</label></div>
+                                <div class="col" style="width: 150px;text-align: left;"><input type="text" id="i3" name="i3" th:value="${kontrolnikVucneKuke2DTO.bP2}"></div>
+                            </div>
+                        </td>
+                    </tr>
+                        <tr style="text-align: center;">
+                            <td style="text-align: center;"><label class="form-label" style="margin-top: 25px;">C</label></td>
+                            <td style="width: 700px;text-align: left;">
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">Presek I</label></div>
+                                    <div class="col" style="text-align: left;width: 200px;"><input type="text" id="i4" name="i4" th:value="${kontrolnikVucneKuke2DTO.cP1}"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">Presek II</label></div>
+                                    <div class="col" style="width: 150px;text-align: left;"><input type="text" id="i5" name="i5" th:value="${kontrolnikVucneKuke2DTO.cP2}"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td style="text-align: center;"><label class="form-label" style="margin-top: 25px;">D</label></td>
+                            <td style="width: 700px;text-align: left;">
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">Presek I</label></div>
+                                    <div class="col" style="text-align: left;width: 200px;"><input type="text" id="i6" name="i6" th:value="${kontrolnikVucneKuke2DTO.dP1}"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">Presek II</label></div>
+                                    <div class="col" style="width: 150px;text-align: left;"><input type="text" id="i7" name="i7" th:value="${kontrolnikVucneKuke2DTO.dP2}"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col" style="text-align: center;margin-top: 20px;"><button class="btn btn-primary" type="button" style="background: var(--bs-gray);transform: scale(1.01);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnSacuvaj">Sačuvaj</button></div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/kvk2.js"></script>
+</body>
+
+</html>

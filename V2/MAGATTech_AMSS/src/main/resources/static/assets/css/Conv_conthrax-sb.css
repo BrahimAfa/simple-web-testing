@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Conv_conthrax-sb';
+	src: url(../../assets/fonts/conthrax-sb.eot) format('embedded-opentype'),
+	url(../../assets/fonts/conthrax-sb.woff) format('woff'),
+	url(../../assets/fonts/conthrax-sb.ttf) format('truetype'),
+	url(../../assets/fonts/conthrax-sb.svg) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

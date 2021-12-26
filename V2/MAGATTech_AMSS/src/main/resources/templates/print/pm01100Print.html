@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MGTP</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="/assets/css/Conv_conthrax-sb.css">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/untitled.css">
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+</head>
+
+<body id="telo">
+<div class="row" style="margin-top: 20%;margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 14px;">Sertifikat o etaloniranju /</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 14px;">&nbsp;Calibration certificate</label></div>
+    <div class="col" style="text-align: right;"><label class="form-label" style="font-weight: bold;font-size: 10px;">Broj /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Number&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label><label class="form-label" style="font-size: 10px;" th:text="${record.brojSeta}"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Predmet etaloniranja /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Calibration item</label></div>
+    <div class="col" style="text-align: left;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;" th:text="${predmetEtaloniranja}"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Korisnik /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Customer</label></div>
+    <div class="col" style="text-align: left;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;" th:text="${record.korisnik}"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Naziv i adresa /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Name and address</label></div>
+    <div class="col" style="text-align: left;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;" th:text="${record.adresa}"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Naručilac /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Applicant</label></div>
+    <div class="col" style="text-align: left;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;">AMSS- CENTAR ZA MOTORNA VOZILA </label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Serijski br. /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Serial no.</label></div>
+    <div class="col" style="text-align: left;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;" th:text="${record.serijskiBroj}"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Identifikacioni br. /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Identification no.</label></div>
+    <div class="col" style="text-align: left;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;" th:text="${record.brojSeta}"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Datum etaloniranja /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Date of calibration</label></div>
+    <div class="col" style="text-align: left;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;" th:value="${record.datum}"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Datum odobrenja /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Date of approval</label></div>
+    <div class="col" style="text-align: left;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;" th:value="${record.datum}"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Metrološka sledivost /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Traceability</label></div>
+    <div class="col" style="text-align: left;">
+        <div class="row">
+            <div class="col"><label class="col-form-label" style="font-weight: bold;font-size: 10px;padding-bottom: 0px;">Rezultati merenja su sledljivi do nacionalnih etalona (DMDM), a time do međunarodnih etalona SI jedinica.</label></div>
+        </div>
+        <div class="row">
+            <div class="col" style="color: var(--bs-blue);font-style: italic;"><label class="col-form-label" style="font-size: 10px;padding-top: 0px;color: rgb(36,64,97);">Measurement results are tracable to national standards (DMDM), and thus to internationally supported realization of the SI units.</label></div>
+        </div>
+    </div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;margin-top: 2%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Etaloniranje izveo /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Calibration performed by</label></div>
+    <div class="col" style="text-align: right;"><label class="form-label" style="font-weight: bold;color: var(--bs-gray-900);font-size: 10px;">Odobrio /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Approved by</label></div>
+</div>
+<div class="row">
+    <div class="col" style="height: 60px;"><label class="col-form-label"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;" th:text="${etalonirao}">, Metrolog /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Metrologiest</label></div>
+    <div class="col" style="text-align: right;"><label class="form-label" style="font-weight: bold;color: var(--bs-gray-900);font-size: 10px;" th:text="${odobrio}">, Rukovodilac laboratorije /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Head of the laboratory</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;margin-top: 2%;">
+    <div class="col" style="text-align: right;"><label class="form-label" style="font-weight: bold;color: var(--bs-gray-900);font-size: 10px;">Odobrio /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Approved by</label></div>
+</div>
+<div class="row">
+    <div class="col" style="height: 60px;"><label class="col-form-label"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col" style="text-align: right;"><label class="form-label" style="font-weight: bold;color: var(--bs-gray-900);font-size: 10px;">dr Maja Aleksić, dipl. maš. ing.&nbsp; Tehnički direktor /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Tehnical director</label></div>
+</div>
+<div class="row">
+    <div class="col" style="margin-right: 5%;margin-left: 5%;"><label class="form-label" style="font-size: 8px;">Odricanje od odgovornosti /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 8px;">&nbsp;Disclaimer</label></div>
+</div>
+<div class="row">
+    <div class="col" style="margin-right: 5%;margin-left: 5%;"><label class="form-label" style="font-size: 8px;">Rezultati se odnose samo na predmete koji su etalonirani i važe u trenutku etaloniranja. /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 8px;">&nbsp;Results related only to the items calibrated and they are valid during the calibration.</label></div>
+</div>
+<div class="row">
+    <div class="col" style="margin-right: 5%;margin-left: 5%;"><label class="form-label" style="font-size: 8px;">Laboratorija ne snosi odgovornost za informacije dobijene od korisnika. /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 8px;">&nbsp;Laboratory is not responsible for the information provided by the customer.</label></div>
+</div>
+<div class="row">
+    <div class="col" style="margin-right: 5%;margin-left: 5%;"><label class="form-label" style="font-size: 8px;">Laboratorija ne snosi odgovornost za naknadna podešavanja predmeta etaloniranja. /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 8px;">&nbsp;Laboratory is not responsible for further adjustment of the calibrated item.</label></div>
+</div>
+<div class="row">
+    <div class="col" style="margin-right: 5%;margin-left: 5%;"><label class="form-label" style="font-size: 8px;">Zabranjeno je umnožavanje sertifikata o etaloniranju, osim u celosti, bez odobrenja laboratorije. Sertifikat o etaloniranju bez potpisa i pečata nije važeći. /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 8px;">&nbsp;This calibration certificate shall not be reproduced, except in full, without approval of laboratory. Calibration certificates without signature and seal are not valid.</label></div>
+</div>
+<footer>
+    <div class="row" style="margin-top: 8%;">
+        <div class="col" style="margin-left: 5%;text-align: left;"><label class="form-label" style="font-size: 9px;">Oznaka /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 9px;">Label&nbsp; &nbsp; &nbsp;</label><label class="form-label" style="font-size: 9px;">PR06-03</label></div>
+        <div class="col" style="text-align: center;"><label class="form-label" style="font-size: 9px;">Izdanje /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 9px;">&nbsp;Edition<em>&nbsp; &nbsp; &nbsp;</em><br></label><label class="form-label" style="font-size: 9px;">2/0</label></div>
+        <div class="col" style="margin-right: 5%;text-align: right;"><label class="form-label" style="font-size: 9px;">Strana /&nbsp;</label><label class="form-label" style="font-style: italic;color: rgb(36,64,97);font-size: 9px;">&nbsp;Page<em>&nbsp; &nbsp; &nbsp;</em><br></label><label class="form-label" style="font-size: 9px;">1/3</label></div>
+    </div>
+</footer>
+<div class="row" style="margin-top: 30%;margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Sertifikat o etaloniranju broj /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Calibration certificate number</label></div>
+    <div class="col" style="text-align: right;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;" th:value="${record.brojSeta}"></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Podaci o merilu /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Measure information</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Proizvodjač&nbsp; /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Manufacturer</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Tip /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Type</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Merni opseg /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Measurement range</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;" th:text="${record.proizvodjac}"></label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;font-size: 10px;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;" th:text="${record.tip}"></label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">0 mm do 100 mm</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Najmanji podeljak /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Minimum interval</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Klasa tačnosti /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Accuracy class</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Napomena /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Remarks</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">0,1mm</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">/</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">/</label></div>
+</div>
+<div class="row" style="margin-top: 2%;margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;margin-top: 30px;">Metoda etaloniranja /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Measuring procedure</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 11px;">NIST SOP 11:2014</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;margin-top: 30px;">Merna oprema /</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Measuring equipment</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Naziv /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Description</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Serijski broj opreme /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;EQ. No.</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Broj sertifikata /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Certificate no.</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Izdat od /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Authority issued</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Granitna ploča</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">107AG</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">393-2/4-01-903/2 od 15.05.2018.</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">DMDM (NMI)</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">GPPMD</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">34778/85</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">001/21-L47 od 15.01.2021.</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">MAGAT Tech (ATS 02-052)</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Cilindrični etalon prečnika</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">077</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">001/21-L51 od 02.04.2021.</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">MAGAT Tech (ATS 02-052)</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Etalon prsten</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">3B 583</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Д-237/2020 od 07.05.2020.</label></div>
+    <div class="col" style="text-align: center;border-width: 1px;border-style: solid;"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">KRUŠIK (ATS 02-051)</label></div>
+</div>
+<div class="row" style="margin-top: 2%;margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;margin-top: 30px;">Ambijentalni uslovi /</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Ambient conditions</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Temperatura /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Temperature</label></div>
+    <div class="col" style="text-align: left;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;">(20±1) °C</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Vlaga /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Humidity</label></div>
+    <div class="col" style="text-align: left;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;">(50±20) %RH</label></div>
+</div>
+<div class="row" style="margin-top: 2%;margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;margin-top: 30px;">Mesto etaloniranja /</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Place of calibration</label></div>
+</div>
+<div class="row" style="margin-top: 2%;margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">MAGAT Tech d.o.o. ,Laboratorija za etaloniranje, Oslobođenja br. 1, 11000 Beograd</label></div>
+</div>
+<footer>
+    <div class="row" style="margin-top: 23%;">
+        <div class="col" style="margin-left: 5%;text-align: left;"><label class="form-label" style="font-size: 9px;">Oznaka /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 9px;">Label&nbsp; &nbsp; &nbsp;</label><label class="form-label" style="font-size: 9px;">PR06-03</label></div>
+        <div class="col" style="text-align: center;"><label class="form-label" style="font-size: 9px;">Izdanje /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 9px;">&nbsp;Edition<em>&nbsp; &nbsp; &nbsp;</em><br></label><label class="form-label" style="font-size: 9px;">2/0</label></div>
+        <div class="col" style="margin-right: 5%;text-align: right;"><label class="form-label" style="font-size: 9px;">Strana /&nbsp;</label><label class="form-label" style="font-style: italic;color: rgb(36,64,97);font-size: 9px;">&nbsp;Page<em>&nbsp; &nbsp; &nbsp;</em><br></label><label class="form-label" style="font-size: 9px;">2/3</label></div>
+    </div>
+</footer>
+<div class="row" style="margin-top: 30%;margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Sertifikat o etaloniranju broj /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Calibration certificate number</label></div>
+    <div class="col" style="text-align: right;"><label class="col-form-label" style="font-weight: bold;font-size: 10px;">.</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Rezultati etaloniranja /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Calibration results</label></div>
+</div>
+<div class="row" style="text-align: center;margin-top: 5%;">
+    <div class="col" style="text-align: center;">
+        <div class="table-responsive" style="width: 80%;margin-left: 10%;">
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td colspan="4" rowspan="2"></td>
+                    <td colspan="2" rowspan="2" style="font-size: 10px;">Nazivna mera [mm]</td>
+                    <td colspan="4" style="font-size: 10px;">Odstupanje od nazivne mere [µm]<br></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size: 10px;">sredina</td>
+                    <td colspan="2" style="font-size: 10px;">vrh</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="font-size: 10px;" rowspan="6">Merne površine za spoljašnje merenje</td>
+                    <td colspan="2" style="font-size: 10px;">0</td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmS0}"></td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmV0}"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size: 10px;">14,8</td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmS1}"></td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmV1}"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size: 10px;">30,3</td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmS2}"></td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmV2}"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size: 10px;">50,0</td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmS3}"></td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmV3}"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size: 10px;">75,5</td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmS4}"></td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmV4}"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size: 10px;">100,0</td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmS5}"></td>
+                    <td colspan="2" style="font-size: 10px;" th:text="${pm.oonmV5}"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" style="font-size: 10px;">Merne površine za unutrašnje merenje</td>
+                    <td colspan="2" style="font-size: 10px;">Ø 8</td>
+                    <td colspan="4" style="font-size: 10px;" th:text="${pm.um1}"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size: 10px;">30</td>
+                    <td colspan="4" style="font-size: 10px;" th:text="${pm.um2}"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="font-size: 10px;">Merni šip za dubinu</td>
+                    <td colspan="2" style="font-size: 10px;">50</td>
+                    <td colspan="4" style="font-size: 10px;" th:text="${pm.mszd}"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="font-size: 10px;">Step. merenje čeonih površina</td>
+                    <td colspan="2" style="font-size: 10px;">30</td>
+                    <td colspan="4" style="font-size: 10px;" th:text="${pm.smcp}"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="font-size: 10px;">Ponovljivost merenja mernih<br>površina za spoljašnje merenje</td>
+                    <td colspan="2" style="font-size: 10px;">50</td>
+                    <td colspan="4" style="font-size: 10px;padding: 0;">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tbody>
+                                <tr>
+                                    <td th:text="${pm.pmmpsm0}"></td>
+                                    <td th:text="${pm.pmmpsm1}"></td>
+                                    <td th:text="${pm.pmmpsm2}"></td>
+                                    <td th:text="${pm.pmmpsm3}"></td>
+                                    <td th:text="${pm.pmmpsm4}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6" style="font-size: 10px;">Paralelnost mernih površina za spoljašnje merenje [µm]</td>
+                    <td colspan="4" style="font-size: 10px;" th:text="${pm.pmpsm}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;">Merna nesigurnost /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 10px;">&nbsp;Measurement uncertainty</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;text-align: center;">
+    <div class="col"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 11px;">U 1) = (25+0,006·L) μm L u mm<br></label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="col-form-label" style="color: var(--bs-gray-900);font-weight: bold;font-size: 10px;padding-bottom: 0;">1) Navedena proširena merna nesigurnost data je kao standardna merna nesigurnost, pomnožena faktorom poverenja k=2, koji za normalnu raspodelu odgovara nivou poverenja od približno 95% (EA-4 / 02M:2013).</label></div>
+</div>
+<div class="row" style="margin-left: 5%;margin-right: 5%;">
+    <div class="col"><label class="col-form-label" style="color: rgb(36,64,97);font-weight: bold;font-size: 10px;padding-top: 0;">1) The above mentioned expanded measurement uncertainty is given as standard measurement uncertainty, multiplied by the coverage factor k=2, which corresponds to the probability of covering approximately 95% for normal distribution (EA-4 / 02M:2013).</label></div>
+</div>
+<div class="row">
+    <div class="col" style="text-align: center;"><label class="col-form-label" style="font-size: 12px;padding-bottom: 0;">-Kraj sertifikata o etaloniranju-</label></div>
+</div>
+<div class="row">
+    <div class="col" style="text-align: center;"><label class="col-form-label" style="font-size: 12px;color: rgb(36,64,97);padding-top: 0;">-End of calibration certificate-</label></div>
+</div>
+<footer>
+    <div class="row" style="margin-top: 5%;">
+        <div class="col" style="margin-left: 5%;text-align: left;"><label class="form-label" style="font-size: 9px;">Oznaka /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 9px;">Label&nbsp; &nbsp; &nbsp;</label><label class="form-label" style="font-size: 9px;">PR06-03</label></div>
+        <div class="col" style="text-align: center;"><label class="form-label" style="font-size: 9px;">Izdanje /&nbsp;</label><label class="form-label" style="color: rgb(36,64,97);font-style: italic;font-size: 9px;">&nbsp;Edition<em>&nbsp; &nbsp; &nbsp;</em><br></label><label class="form-label" style="font-size: 9px;">2/0</label></div>
+        <div class="col" style="margin-right: 5%;text-align: right;"><label class="form-label" style="font-size: 9px;">Strana /&nbsp;</label><label class="form-label" style="font-style: italic;color: rgb(36,64,97);font-size: 9px;">&nbsp;Page<em>&nbsp; &nbsp; &nbsp;</em><br></label><label class="form-label" style="font-size: 9px;">3/3</label></div>
+    </div>
+</footer>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/js/bs-init.js"></script>
+<script type="text/javascript" src="/assets/js/mt3Print.js"></script>
+</body>
+
+</html>

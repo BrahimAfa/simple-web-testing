@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Home - MGTP</title>
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+  <link rel="stylesheet" href="/assets/css/Conv_conthrax-sb.css">
+  <link rel="stylesheet" href="/assets/css/untitled.css">
+</head>
+
+<body>
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+  <div class="container"><a class="navbar-brand">MGTP</a>
+    <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+    <div class="collapse navbar-collapse" id="navcol-1"></div>
+    <button class="btn btn-primary" type="button" id="btnEtaloniranje" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Etaloniranje</button>
+    <button class="btn btn-primary" type="button" id="btnPromeniSet" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Promeni set</button>
+    <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnStampaj">Štampanje</button>
+    <button class="btn btn-primary" type="button" id="btnPregled" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Pregled</button>
+    <button class="btn btn-primary" type="button" id="btnOdjaviSe" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Odjavi se</button>
+  </div>
+  </div>
+</nav>
+<form id="frmInfo" method="post" action="" name="frmInfo">
+  <input type="hidden" th:value="${rec}" th:attr="name='rec'" id="rec"/>
+<div class="row">
+  <div class="col">
+    <div class="table-responsive">
+      <table class="table">
+        <tbody>
+        <tr></tr>
+        <tr style="text-align: left;">
+          <td></td>
+          <td style="text-align: center;">[mm]</td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">0</td>
+          <td style="text-align: center;"><input type="text" id="i0" name="i0" th:value="${mernaTraka30DTO.oonm0}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">10</td>
+          <td style="text-align: center;"><input type="text" id="i1" name="i1" th:value="${mernaTraka30DTO.oonm10}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">20</td>
+          <td style="text-align: center;"><input type="text" id="i2" name="i2" th:value="${mernaTraka30DTO.oonm20}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">30</td>
+          <td style="text-align: center;"><input type="text" id="i3" name="i3" th:value="${mernaTraka30DTO.oonm30}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">40</td>
+          <td style="text-align: center;"><input type="text" id="i4" name="i4" th:value="${mernaTraka30DTO.oonm40}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">50</td>
+          <td style="text-align: center;"><input type="text" id="i5" name="i5" th:value="${mernaTraka30DTO.oonm50}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">60</td>
+          <td style="text-align: center;"><input type="text" id="i6" name="i6" th:value="${mernaTraka30DTO.oonm60}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">70</td>
+          <td style="text-align: center;"><input type="text" id="i7" name="i7" th:value="${mernaTraka30DTO.oonm70}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">80</td>
+          <td style="text-align: center;"><input type="text" id="i8" name="i8" th:value="${mernaTraka30DTO.oonm80}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">90</td>
+          <td style="text-align: center;"><input type="text" id="i9" name="i9" th:value="${mernaTraka30DTO.oonm90}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">100</td>
+          <td style="text-align: center;"><input type="text" id="i10" name="i10" th:value="${mernaTraka30DTO.oonm100}"></td>
+        </tr>
+
+        <tr style="text-align: center;">
+          <td style="text-align: right;">500</td>
+          <td style="text-align: center;"><input type="text" id="i11" name="i11" th:value="${mernaTraka30DTO.oonm500}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">1000</td>
+          <td style="text-align: center;"><input type="text" id="i12" name="i12" th:value="${mernaTraka30DTO.oonm1000}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">2000</td>
+          <td style="text-align: center;"><input type="text" id="i13" name="i13" th:value="${mernaTraka30DTO.oonm2000}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">3000</td>
+          <td style="text-align: center;"><input type="text" id="i14" name="i14" th:value="${mernaTraka30DTO.oonm3000}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">4000</td>
+          <td style="text-align: center;"><input type="text" id="i15" name="i15" th:value="${mernaTraka30DTO.oonm4000}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">5000</td>
+          <td style="text-align: center;"><input type="text" id="i16" name="i16" th:value="${mernaTraka30DTO.oonm5000}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">7500</td>
+          <td style="text-align: center;"><input type="text" id="i17" name="i17" th:value="${mernaTraka30DTO.oonm7500}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">10000</td>
+          <td style="text-align: center;"><input type="text" id="i18" name="i18" th:value="${mernaTraka30DTO.oonm10000}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">12500</td>
+          <td style="text-align: center;"><input type="text" id="i19" name="i19" th:value="${mernaTraka30DTO.oonm12500}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">15000</td>
+          <td style="text-align: center;"><input type="text" id="i20" name="i20" th:value="${mernaTraka30DTO.oonm15000}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">17500</td>
+          <td style="text-align: center;"><input type="text" id="i21" name="i21" th:value="${mernaTraka30DTO.oonm17500}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">20000</td>
+          <td style="text-align: center;"><input type="text" id="i22" name="i22" th:value="${mernaTraka30DTO.oonm20000}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">22500</td>
+          <td style="text-align: center;"><input type="text" id="i23" name="i23" th:value="${mernaTraka30DTO.oonm22500}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">25000</td>
+          <td style="text-align: center;"><input type="text" id="i24" name="i24" th:value="${mernaTraka30DTO.oonm25000}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">27500</td>
+          <td style="text-align: center;"><input type="text" id="i25" name="i25" th:value="${mernaTraka30DTO.oonm27500}"></td>
+        </tr>
+        <tr style="text-align: center;">
+          <td style="text-align: right;">30000</td>
+          <td style="text-align: center;"><input type="text" id="i26" name="i26" th:value="${mernaTraka30DTO.oonm30000}"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</form>
+<div class="row" style="margin-bottom: 20px;">
+  <div class="col" style="text-align: center;margin-top: 20px;"><button class="btn btn-primary" type="button" style="background: var(--bs-gray);transform: scale(1.01);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnSacuvaj">Sačuvaj</button></div>
+</div>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/mernaTraka3.js"></script>
+</body>
+
+</html>

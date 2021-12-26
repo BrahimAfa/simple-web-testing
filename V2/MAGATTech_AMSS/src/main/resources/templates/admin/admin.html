@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - MGTP</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="/assets/css/Conv_conthrax-sb.css">
+    <link rel="stylesheet" href="/assets/css/untitled.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#">MGTP</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div><button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnAdmin">Admin</button>
+            <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnEtaloniranje">Etaloniranje</button>
+            <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnPromeniSet">Promeni set</button>
+            <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnStampaj">Štampanje</button>
+            <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnPregled">Pregled</button>
+            <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnOdjaviSe">Odjavi se</button>
+        </div>
+    </nav>
+    <div>
+        <form method="post" action="" id="userUpdateForm" name="userUpdateForm">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col" style="text-align: center;"><select id="opcija" name="opcija">
+                    <optgroup label="Izaberite opciju">
+                        <option value="1">Dodaj</option>
+                        <option value="2">Ukloni</option>
+                        <option value="3">Izmeni</option>
+                    </optgroup>
+                </select></div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: center;"><select style="margin-top: 20px;" id="nivoOvlascenja" name="nivoOvlascenja">
+                    <optgroup label="Nivo privilegije">
+                        <option value="1">Administrator</option>
+                        <option value="2">Radnik</option>
+                        <option value="3">Korisnik</option>
+                    </optgroup>
+                </select></div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">E-mail :</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="email" name="email"></div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Password :</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="pass" name="pass"></div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Ime i prezime :</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="iip" name="iip"></div>
+        </div>
+    </div>
+    </form>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button" style="text-align: center;color: var(--bs-white);transform: translate(0px) scale(1.25);background: var(--bs-gray);border-color: var(--bs-white);" id="userBtn"> Sačuvaj </button></div>
+    </div>
+    <div style="width: 70%;text-align: center;margin-left: 15%; margin-top: 40px">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Ime i Prezime</th>
+                    <th>eMail</th>
+                    <th>Uloga</th>
+                    <th>Password</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user: ${users}">
+                    <td th:text="${user.name}"/>
+                    <td th:text="${user.userName}" />
+                    <td th:text="${user.roles}" />
+                    <td th:text="${user.password}" />
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/admin.js"></script>
+</body>
+
+</html>

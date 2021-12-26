@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - MGTP</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="/assets/css/Conv_conthrax-sb.css">
+    <link rel="stylesheet" href="/assets/css/untitled.css">
+</head>
+
+<body>
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <div class="container"><a class="navbar-brand" href="#">MGTP</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+        <div class="collapse navbar-collapse" id="navcol-1"></div><button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnAdmin">Admin</button>
+        <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnEtaloniranje">Etaloniranje</button>
+        <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnPromeniSet">Promeni set</button>
+        <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnStampaj">Štampanje</button>
+        <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnPregled">Pregled</button>
+        <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnOdjaviSe">Odjavi se</button>
+    </div>
+</nav>
+<form method="post" id="MenyBut" name="MenyBut" val="">
+    <input type="hidden" id="MenyButtons" name="MenyButtons" value="">
+</form>
+<form method="post" action="" id="frmParams">
+    <div style="text-align: center;">
+        <div class="row" style="text-align: center;margin-top: 10px;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">ID broj seta:</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="brojSetaField" name="brojSetaField" ></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Predmet etaloniranja:</label></div>
+            <div class="col" style="text-align: left;"><select id="predmetEtaloniranja" name="predmetEtaloniranja">
+                <optgroup label="">
+                    <option value="Pomično merilo" selected="">Pomično merilo</option>
+                    <option value="Merna traka 3m">Merna traka 3m</option>
+                    <option value="Merna traka 5m">Merna traka 5m</option>
+                    <option value="Merna traka 30m">Merna traka 30m</option>
+                    <option value="Merna traka 50m">Merna traka 50m</option>
+                    <option value="Kontrolnik vučne kuke 1">Kontrolnik vučne kuke 1</option>
+                    <option value="Kontrolnik vučne kuke 2">Kontrolnik vučne kuke 2</option>
+                </optgroup>
+            </select></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Proizvođač:</label></div>
+            <div class="col" style="text-align: left;"><input type="text" name="proizvodjac" id="proizvodjac" list="proizvodjaci" style="max-width: 100px">
+                <datalist id="proizvodjaci">
+                    <option th:each="proizvodjac : ${proizvodjaci}" th:value="${proizvodjac.name}"  selected=""></option>
+                </datalist></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Merni opseg:</label></div>
+            <div class="col" style="text-align: left;"><select id="merniOpseg" name="merniOpseg">
+                <optgroup label="">
+                    <option value="100" selected="">0-100 mm</option>
+                    <option value="150">0-150 mm</option>
+                    <option value="200">0-200 mm</option>
+                </optgroup>
+            </select></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Tip:</label></div>
+            <div class="col" style="text-align: left;border-color: var(--bs-gray-100);background: var(--bs-white);"><select id="tip" name="tip">
+                <optgroup label="">
+                    <option value="Digitalno" selected="">Digitalno</option>
+                    <option value="Univerzalno">Univerzalno</option>
+                    <option value="Sa noniusom univerzalno">Sa noniusom univerzalno</option>
+                </optgroup>
+            </select></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Najmanji podeljak:</label></div>
+            <div class="col" style="text-align: left;"><select id="najmanjiPodeljak" name="najmanjiPodeljak">
+                <optgroup label="">
+                    <option value="01" selected="">0,01 mm</option>
+                    <option value="02">0,02 mm</option>
+                    <option value="05">0,05 mm</option>
+                    <option value="1">0,1 mm</option>
+                </optgroup>
+            </select></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Klasa tačnosti:</label></div>
+            <div class="col" style="text-align: left;"><select id="klasaTacnosti" name="klasaTacnosti">
+                <optgroup label="">
+                    <option value="1" selected="">I</option>
+                    <option value="2">II</option>
+                    <option value="3">III</option>
+                </optgroup>
+            </select></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Serijski broj:</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="serijskiBroj" name="serijskiBroj"></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Inventarski broj:</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="inventarskiBroj" name="inventarskiBroj"></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Korisnik:</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="korisnik" name="korisnik"></div>
+        </div>
+    </div>
+</form>
+<div style="text-align: center; margin-top: 20px; transform: translate(0px) scale(1.25);color: var(--bs-gray);">
+    <button class="btn btn-primary" type="button" style="background: var(--bs-gray); border-color: rgb(255,255,255);" id="btDalje">Dalje</button>
+</div>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/workbenchAdmin.js"></script>
+</body>
+
+</html>

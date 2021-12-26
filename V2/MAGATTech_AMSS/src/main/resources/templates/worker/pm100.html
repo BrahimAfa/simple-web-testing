@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - MGTP</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="/assets/css/Conv_conthrax-sb.css">
+    <link rel="stylesheet" href="/assets/css/untitled.css">
+</head>
+
+<body>
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <div class="container"><a class="navbar-brand">MGTP</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+        <div class="collapse navbar-collapse" id="navcol-1"></div>
+        <button class="btn btn-primary" type="button" id="btnEtaloniranje" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Etaloniranje</button>
+        <button class="btn btn-primary" type="button" id="btnPromeniSet" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Promeni set</button>
+        <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnStampaj">Štampanje</button>
+        <button class="btn btn-primary" type="button" id="btnPregled" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Pregled</button>
+        <button class="btn btn-primary" type="button" id="btnOdjaviSe" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Odjavi se</button>
+    </div>
+    </div>
+</nav>
+    <form id="frmPM100" method="post" action="" name="frmInfo">
+        <input type="hidden" th:value="${rec}" th:attr="name='rec'" id="rec"/>
+        <input type="hidden" th:value="${mp}" th:attr="name='mp'" id="mp"/>
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th style="text-align: center;">Nazivna mera [mm]</th>
+                            <th style="text-align: center;">Odstupanje od nazivne mere&nbsp;[µm]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;sredina&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vrh</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">Merne površine za spoljašnje merenje</td>
+                            <td style="text-align: center;">0</td>
+                            <td><input type="text" style="width: 100px;margin-right: 10px;" id="oonmS0" name="oonmS0" th:value="${pomicnoMerilo.oonmS0}"><input type="text" style="width: 100px;" id="oonmV0" name="oonmV0" th:value="${pomicnoMerilo.oonmV0}"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center;">14,8</td>
+                            <td><input type="text" style="width: 100px;margin-right: 10px;" id="oonmS1" name="oonmS1" th:value="${pomicnoMerilo.oonmS1}"><input type="text" style="width: 100px;" id="oonmV1" name="oonmV1" th:value="${pomicnoMerilo.oonmV1}"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center;">30,3</td>
+                            <td><input type="text" style="width: 100px;margin-right: 10px;" id="oonmS2" name="oonmS2" th:value="${pomicnoMerilo.oonmS2}"><input type="text" style="width: 100px;" id="oonmV2" name="oonmV2" th:value="${pomicnoMerilo.oonmV2}"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center;">50,0</td>
+                            <td><input type="text" style="width: 100px;margin-right: 10px;" id="oonmS3" name="oonmS3" th:value="${pomicnoMerilo.oonmS3}"><input type="text" style="width: 100px;" id="oonmV3" name="oonmV3" th:value="${pomicnoMerilo.oonmV3}"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center;">75,5</td>
+                            <td><input type="text" style="width: 100px;margin-right: 10px;" id="oonmS4" name="oonmS4" th:value="${pomicnoMerilo.oonmS4}"><input type="text" style="width: 100px;" id="oonmV4" name="oonmV4" th:value="${pomicnoMerilo.oonmV4}"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center;">100,0</td>
+                            <td><input type="text" style="width: 100px;margin-right: 10px;" id="oonmS5" name="oonmS5" th:value="${pomicnoMerilo.oonmS5}"><input type="text" style="width: 100px;" id="oonmV5" name="oonmV5" th:value="${pomicnoMerilo.oonmV5}"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">Merne površine za unutrašnje merenje</td>
+                            <td style="text-align: center;">Ø 8</td>
+                            <td style="text-align: left;"><input type="text" style="width: 100px;" id="um1" name="um1" th:value="${pomicnoMerilo.um1}"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center;">30</td>
+                            <td style="text-align: left;"><input type="text" style="width: 100px;" id="um2" name="um2" th:value="${pomicnoMerilo.um2}"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">Merni šip za dubinu</td>
+                            <td style="text-align: center;">50</td>
+                            <td style="text-align: left;"><input type="text" style="width: 100px;" id="mszd" name="mszd" th:value="${pomicnoMerilo.mszd}"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">Step. merenje čeonih površina</td>
+                            <td style="text-align: center;">30</td>
+                            <td style="text-align: left;"><input type="text" style="width: 100px;" id="smcp" name="smcp" th:value="${pomicnoMerilo.smcp}"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">Ponovljivost merenja mernih površina za spoljašnje merenje</td>
+                            <td style="text-align: center;">50</td>
+                            <td style="text-align: left;"><input type="text" style="width: 80px;margin-right: 10px;" id="pmmpsm0" name="pmmpsm0" th:value="${pomicnoMerilo.pmmpsm0}"><input type="text" style="width: 80px;margin-right: 10px;" id="pmmpsm1" name="pmmpsm1" th:value="${pomicnoMerilo.pmmpsm1}"><input type="text" style="width: 80px;margin-right: 10px;" id="pmmpsm2" name="pmmpsm2" th:value="${pomicnoMerilo.pmmpsm2}"><input type="text" style="width: 80px;margin-right: 10px;" id="pmmpsm3" name="pmmpsm3" th:value="${pomicnoMerilo.pmmpsm3}"><input type="text" style="width: 80px;" id="pmmpsm4" name="pmmpsm4" th:value="${pomicnoMerilo.pmmpsm4}"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">Paralelnost mernih površina za spoljašnje merenje [µm]</td>
+                            <td style="text-align: center;"></td>
+                            <td style="text-align: left;"><input type="text" style="width: 100px;" id="pmpsm" name="pmpsm" th:value="${pomicnoMerilo.pmpsm}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="row" style="margin-bottom: 20px;">
+    <div class="col" style="text-align: center;margin-top: 20px;"><button class="btn btn-primary" type="button" style="background: var(--bs-gray);transform: scale(1.01);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnSacuvaj">Sačuvaj</button></div>
+</div>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/PM100.js"></script>
+</body>
+
+</html>

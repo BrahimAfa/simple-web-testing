@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - MGTP</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="/assets/css/Conv_conthrax-sb.css">
+    <link rel="stylesheet" href="/assets/css/untitled.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#">MGTP</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+                <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnPregled">Pregled</button>
+                <button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;" id="btnNoviSet">Novi set</button>
+                <button class="btn btn-primary" type="button" style="border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;background: var(--bs-gray);" id="btnOdjaviSe">Odjavi se</button></div>
+        </div>
+    </nav>
+    <form method="post" action="" id="pstForm">
+    <div style="margin-top: 5%;">
+        <div class="row">
+            <div class="col" style="text-align: right;"><label class="col-form-label">ID Broj seta :</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="brojSeta" name="brojSeta"></div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Datum :</label></div>
+            <div class="col" style="text-align: left;"><input type="date" id="datum" name="datum"></div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Poslovno ime korisnika / ogranka :</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="poslovnoIme" name="poslovnoIme"></div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Adresa na kojoj se nalazi linija :</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="adresa" name="adresa"></div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Broj telefona :</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="brTelefona" name="brTelefona"></div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Mail adresa :</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="mail" name="mail"></div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: right;"><label class="col-form-label">PIB :</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="pib" name="pib"></div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Napomena :</label></div>
+            <div class="col" style="text-align: left;"><input type="text" id="napomena" name="napomena"></div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: right;"><label class="col-form-label">Fakturisati :</label></div>
+            <div class="col">
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="cbMt3" name="cbMt3"><label class="form-check-label">Merna traka 3 m</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="cbMt5" name="cbMt5"><label class="form-check-label">Merna traka 5 m</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="cbMt30" name="cbMt30"><label class="form-check-label">Merna traka 30 m</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="cbMt50" name="cbMt50"><label class="form-check-label">Merna traka 50 m</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="cbKK" name="cbKK"><label class="form-check-label">Kontrolni kalibar</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="cbPM" name="cbPM"><label class="form-check-label">Pomično merilo</label></div>
+            </div>
+        </div>
+    </div>
+        </form>
+    <div class="row" style="text-align: center;">
+        <div class="col"><button class="btn btn-primary" type="button" style="background: var(--bs-gray);border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;margin-top: 2%;transform: scale(1.35);" id="btnDodaj">Dodaj</button></div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/dodajSetUser.js"></script>
+</body>
+
+</html>
