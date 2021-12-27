@@ -19,7 +19,7 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: root
         volumes:
-            - vol_mysql_data:/var/lib/mysql
+            - vol_mysql_data_mgt:/var/lib/mysql
     adminer:
         image: adminer
         hostname: adminer
@@ -30,7 +30,5 @@ services:
         depends_on:
             - mysql
 volumes:
-    vol_mysql_data:
-        name: vol_mysql_data
-    vol_mysql_data:
-        name: vol_mysql_data
+    vol_mysql_data_mgt:
+        name: vol_mysql_data_mgt
